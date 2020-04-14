@@ -1,0 +1,17 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc:
+    ~/.spacemacs.d:
+    ~/.gitconfig:
+    ~/.gitignore_global:
+
+- create:
+    - ~/test-to-be-deleted
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

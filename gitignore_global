@@ -1,0 +1,14 @@
+# emacs and spacemacs
+.spacemacs.env
+
+# Node
+npm-debug.log
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# jenv - maintain multiple java versions
+.java-version
