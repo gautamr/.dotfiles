@@ -64,7 +64,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git dotenv autojump docker flutter)
 #plugins+=(zsh-nvm)
 
 # Node and NVM management
@@ -117,9 +117,11 @@ eval "$(jenv init -)"
 export ANDROID_STUDIO_HOME="/Applications/Android Studio.app/Contents"
 
 # Flutter setup
-export ANDROID_SDK_ROOT="/Users/gautamr/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME=$ANDROID_SDK_ROOT
-export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools/platform-tools"
+export FLUTTER_HOME=/usr/local/Caskroom/flutter/latest/flutter
+export DART_HOME=$FLUTTER_HOME/bin/cache/dart-sdk
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools/platform-tools:$DART_HOME/bin"
 
 
 # Haskell

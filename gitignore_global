@@ -12,3 +12,6 @@ Thumbs.db
 
 # jenv - maintain multiple java versions
 .java-version
+
+# secret env variables
+.env

@@ -15,3 +15,22 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  
+- asdf:
+  - plugin: nodejs
+  - plugin: ruby
+
+- brewfile:
+    - Brewfile
+    - brew/Brewfile
+
+- tap:
+    - caskroom/fonts
+
+- brew:
+    - git
+    - git-lfs
+
+- brew: [gnupg, gnupg2]
+
+- cask: [colorpicker, vlc]

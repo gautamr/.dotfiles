@@ -54,7 +54,7 @@ values."
      syntax-checking
      lsp
      java
-
+     docker
      javascript
 
      ;; flutter development
