@@ -3,3 +3,5 @@
 	email = gautam.2005@gmail.com
 [core]
 	excludesfile = /Users/gautamr/.gitignore_global
+[diff "sopsdiffer"]
+	textconv = sops -d
