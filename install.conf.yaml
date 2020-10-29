@@ -9,6 +9,7 @@
     ~/.spacemacs.d:
     ~/.gitconfig:
     ~/.gitignore_global:
+    ~/.config/starship.toml:
 
 - create:
     - ~/test-to-be-deleted

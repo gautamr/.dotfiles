@@ -1,8 +1,13 @@
-# For managing different versions use "asdf"
+# For managing different versions use `asdf`; except for Java
 . $(brew --prefix asdf)/asdf.sh
 
+# For managing different Java version use `jenv`
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# GCP
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # Android
 export ANDROID_STUDIO_HOME="/Applications/Android Studio.app/Contents"
@@ -21,6 +26,7 @@ export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
+export PATH=$PATH:$HOME/.virtualenvs/default/lib/python3.8/site-packages
 
 # zsh-autoenv
 AUTOENV_FILE_ENTER=.autoenv.zsh
@@ -51,9 +57,5 @@ fi
 zplug load --verbose
 
 # alias
-alias kubectl="HTTPS_PROXY=localhost:8888 kubectl"
-alias istioctl="HTTPS_PROXY=localhost:8888 istioctl"
-alias fluxctl="HTTPS_PROXY=localhost:8888 fluxctl"
-alias helm="HTTPS_PROXY=localhost:8888 helm"
 
 eval "$(starship init zsh)"
