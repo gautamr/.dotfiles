@@ -10,12 +10,15 @@
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.config/starship.toml:
+      create: true
+      path: config/starship.toml
 
 - create:
     - ~/test-to-be-deleted
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [npm install -g tldr, Installing tldr]
   
 - asdf:
   - plugin: nodejs
