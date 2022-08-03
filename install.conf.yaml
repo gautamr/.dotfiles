@@ -13,28 +13,5 @@
       create: true
       path: config/starship.toml
 
-- create:
-    - ~/test-to-be-deleted
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [npm install -g tldr, Installing tldr]
-  
-- asdf:
-  - plugin: nodejs
-  - plugin: ruby
-
-- brewfile:
-    - Brewfile
-    - brew/Brewfile
-
-- tap:
-    - caskroom/fonts
-
-- brew:
-    - git
-    - git-lfs
-
-- brew: [gnupg, gnupg2]
-
-- cask: [colorpicker, vlc]

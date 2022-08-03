@@ -3,12 +3,14 @@
 `.dotfiles` for [@gautamr](https://github.com/gautamr) personal development tools
 
 ## Tools
+
 - https://github.com/anishathalye/dotbot
 - https://starship.rs
 - https://github.com/Tarrasch/zsh-autoenv
 - https://github.com/tldr-pages/tldr
 - https://asdf-vm.com/#/core-manage-asdf
 
+Before running `\install` always update the dotbot
 
 ```sh
 git submodule update --remote dotbot
@@ -16,41 +18,37 @@ git submodule update --remote dotbot
 
 
 ## xcode command line tools
+
 we need Xcode IDE as we are not building software for Mac - flutter cross-platform 
 ### Install
+
 xcode-select --install
 ### Update: you can try to list any updates and install with `softwareupdate`
+
 softwareupdate --list
 
 ## Homebrew
+
 ### Install
+
 https://brew.sh/
+
 ### Update
+
 ```sh
 # First update the formulae and Homebrew itself
 brew update
 # https://docs.brew.sh/FAQ
 ```
+
 ### check
+
 ```sh
 brew outdated
 brew list --versions
 brew cleanup --dry-run
 brew cleanup
 brew config
-```
-### essentials
-```sh
-brew install --cask iterm2
-brew install zsh
-brew install ispell
-brew install tldr
-
-# for multiple java version
-brew install jenv
-
-# Dart and flutter
-brew install asdf
 
 brew tap                     # list tapped repositories
 brew tap <tapname>           # add tap
@@ -58,8 +56,25 @@ brew untap <tapname>         # remove a tap
 ```
 
 ### fonts
+
 ```sh
 brew install --cask homebrew/cask-fonts/font-fira-code-nerd-font
+```
+
+### essentials
+
+```sh
+brew install --cask iterm2
+brew install starship
+
+#brew install ispell
+#brew install tldr
+
+# for multiple java version
+brew install jenv
+
+# Dart and flutter
+brew install asdf
 ```
 
 # ecosystems
