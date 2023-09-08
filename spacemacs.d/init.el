@@ -34,7 +34,8 @@ values."
      python
      sql
      systemd
-     clojure
+     (clojure :variables
+              clojure-enable-linters '(clj-kondo joker))
      typescript
      ruby
      git
@@ -59,18 +60,18 @@ values."
      spell-checking
      syntax-checking
      lsp
-     java
-     docker
+     ;;java
+     ;;docker
      (javascript :variables js2-basic-offset 2
                             js-indent-level 2)
 
      ;; flutter development
-     (dart :variables lsp-dart-sdk-dir "/usr/local/Caskroom/flutter/latest/flutter/bin/cache/dart-sdk")
+     ;;(dart :variables lsp-dart-sdk-dir "/usr/local/Caskroom/flutter/latest/flutter/bin/cache/dart-sdk")
      ;; version-control
 
      haskell
-     dhall
-     terraform
+     ;;dhall
+     ;;terraform
      emoji
      )
    ;; List of additional packages that will be installed without being
@@ -155,8 +156,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("JetBrains Mono"
-                               :size 16
+   dotspacemacs-default-font '("JetBrains Mono" ;;"Fira Code"
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -303,7 +304,7 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
@@ -333,7 +334,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;;(setq lsp-java-server-install-dir "/Users/gautamr/dev-projetcs-gt/plugins")
-  (add-hook 'java-mode-hook #'lsp)
+  ;;(add-hook 'java-mode-hook #'lsp)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -363,9 +364,16 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(toml-mode racer helm-gtags ggtags flycheck-rust counsel-gtags counsel swiper ivy cargo rust-mode magit-popup gitignore-mode magit git-commit with-editor transient mvn meghanada maven-test-mode gradle-mode lsp-ui lsp-treemacs helm-lsp company-lsp flyspell-correct flycheck pos-tip company auto-complete lsp-java treemacs lsp-mode markdown-mode dash-functional ht pfuture eclim yasnippet org-category-capture alert log4e gntp define-word yapfify yaml-mode ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit sql-indent spaceline smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restclient-helm restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin plantuml-mode pip-requirements persp-mode pcre2el pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file ob-restclient ob-http neotree mwim move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint launchctl js2-refactor js-doc intero indent-guide hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio go-guru go-eldoc gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flycheck-joker flycheck-haskell flycheck-clj-kondo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu ess-smart-equals ess-R-data-view emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker diminish cython-mode csv-mode company-web company-tern company-statistics company-restclient company-quickhelp company-go company-ghci company-ghc company-emacs-eclim company-cabal company-anaconda column-enforce-mode coffee-mode cmm-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))
+   '(dap-mode lsp-docker bui magit-popup gitignore-mode magit git-commit with-editor transient mvn meghanada maven-test-mode gradle-mode lsp-ui lsp-treemacs helm-lsp company-lsp flyspell-correct flycheck pos-tip company auto-complete lsp-java treemacs lsp-mode markdown-mode dash-functional ht pfuture eclim yasnippet org-category-capture alert log4e gntp define-word yapfify yaml-mode ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit sql-indent spaceline smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restclient-helm restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin plantuml-mode pip-requirements persp-mode pcre2el pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file ob-restclient ob-http neotree mwim move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint launchctl js2-refactor js-doc intero indent-guide hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio go-guru go-eldoc gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flycheck-joker flycheck-haskell flycheck-clj-kondo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu ess-smart-equals ess-R-data-view emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker diminish cython-mode csv-mode company-web company-tern company-statistics company-restclient company-quickhelp company-go company-ghci company-ghc company-emacs-eclim company-cabal company-anaconda column-enforce-mode coffee-mode cmm-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))
  '(safe-local-variable-values
-   '((eval progn
+   '((eval setenv "KUROSAWA_S3_CONFIG_URI" "s3://ladders-config/prod/")
+     (eval setenv "KUROSAWA_S3_CONFIG_URI" "s3://ladders-config/qa/")
+     (eval setenv "KUROSAWA_S3_CONFIG_URI" "s3://ladders-config/local/")
+     (eval
+      (setenv "CLJ_CONFIG" "/Users/gautamr/dev-projects-ladders/services")
+      (setenv "KUROSAWA_S3_CONFIG_URI" "s3://ladders-config/local/"))
+     (eval setenv "CLJ_CONFIG" "/Users/gautamr/dev-projects-ladders/services")
+     (eval progn
            (require 'flycheck-clj-kondo)
            (flycheck-clj-kondo-define-checkers "--config ~/.clj-kondo/config.edn --cache-dir ~/.clj-kondo/.cache --cache"))
      (cider-ns-refresh-after-fn . "dev/start")
@@ -388,5 +396,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
 )

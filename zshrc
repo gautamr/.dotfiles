@@ -12,9 +12,17 @@ eval "$(jenv init -)"
 export PATH=$PATH:$(npm get prefix -g)/bin
 
 # GCP
-export CLOUDSDK_CONFIG=$HOME/.config/gcloud
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+#export CLOUDSDK_CONFIG=$HOME/.config/gcloud
+#source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+#source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# AWS
+export AWS_PROFILE=qa
+export AWS_REGION=us-east-1
+export AWS_DEFAULT_REGION=us-east-1
+
+# Clojure
+export LEIN_USE_BOOTCLASSPATH=no
 
 # Android
 export ANDROID_STUDIO_HOME="/Applications/Android Studio.app/Contents"
@@ -30,6 +38,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Haskell
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+export PATH=$PATH:~/.ghcup/bin
 
 # Python
 #export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
@@ -48,7 +57,7 @@ AUTOENV_HANDLE_LEAVE=1
 AUTOENV_LOOK_UPWARDS=1
 
 # ZSH plugins management with zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "Tarrasch/zsh-autoenv"
@@ -77,3 +86,8 @@ eval "$(starship init zsh)"
 # Add JBang to environment
 alias j!=jbang
 export PATH="$HOME/.jbang/bin:$PATH"
+
+# Ladders
+#export KUROSAWA_S3_CONFIG_URI=s3://ladders-config/local/
+#export KUROSAWA_API_URL=http://localhost:8080
+#export CLJ_CONFIG=/Users/gautamr/dev-projects-ladders/services

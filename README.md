@@ -2,6 +2,11 @@
 
 `.dotfiles` for [@gautamr](https://github.com/gautamr) personal development tools
 
+## Ref
+http://sourabhbajaj.com/mac-setup/
+https://www.robinwieruch.de/mac-setup-web-development/
+
+
 ## Tools
 
 - https://github.com/anishathalye/dotbot
@@ -9,13 +14,20 @@
 - https://github.com/Tarrasch/zsh-autoenv
 - https://github.com/tldr-pages/tldr
 - https://asdf-vm.com/#/core-manage-asdf
+- https://clojure-lsp.io/installation/
+- https://github.com/sharkdp/fd
 
 Before running `\install` always update the dotbot
 
 ```sh
 git submodule update --remote dotbot
 ```
+## Macos setup
 
+```sh
+mkdir -p /Users/gautamr/screenshots
+defaults write com.apple.screencapture location /Users/gautamr/screenshots  && killall SystemUIServer
+```
 
 ## xcode command line tools
 
@@ -58,12 +70,15 @@ brew untap <tapname>         # remove a tap
 ### fonts
 
 ```sh
-brew install --cask homebrew/cask-fonts/font-fira-code-nerd-font
+brew install --cask font-fira-code
+brew install --cask font-jetbrains-mono
 ```
 
 ### essentials
 
 ```sh
+brew install --cask alfred
+
 brew install --cask iterm2
 brew install starship
 
@@ -75,6 +90,24 @@ brew install jenv
 
 # Dart and flutter
 brew install asdf
+
+brew install fd
+```
+
+### tools
+
+```sh
+brew install ripgrep
+brew install --cask emacs
+brew install --cask sublime-text
+brew install kubectx
+brew install --cask visual-studio-code
+```
+#### NeoVIM
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
 # ecosystems
@@ -119,6 +152,8 @@ jenv enable-plugin export
 ### clojure
 need not to install `Clojure` separately; will use it with `lein` or `deps`
 ```sh
+brew install borkdude/brew/clj-kondo
+brew install candid82/brew/joker
 brew install leiningen
 ```
 *NOTE*: Please note that we need to set `LEIN_USE_BOOTCLASSPATH` to `no` until the follwing issues are fixed properl

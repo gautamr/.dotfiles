@@ -1,7 +1,12 @@
 [user]
-	name = gautamr
+	name = Gautam Roy
 	email = gautam.2005@gmail.com
 [core]
 	excludesfile = /Users/gautamr/.gitignore_global
 [diff "sopsdiffer"]
 	textconv = sops -d
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

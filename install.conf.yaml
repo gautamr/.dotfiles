@@ -7,11 +7,18 @@
 - link:
     ~/.zshrc:
     ~/.spacemacs.d:
+    ~/.SpaceVim.d:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.config/starship.toml:
       create: true
       path: config/starship.toml
+    ~/.config/nvim:
+      create: true
+      path: ~/.SpaceVim
+
+- create:
+    - ~/.config
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

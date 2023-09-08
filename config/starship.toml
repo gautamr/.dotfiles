@@ -1,6 +1,6 @@
 # Disable the aws module, hiding it from the prompt completely
 [aws]
-disabled = true
+format = 'on [$symbol($profile )(\($region\) )]($style)'
 
 [gcloud]
 format = "[$symbol $account(\\($project\\))]($style) "
