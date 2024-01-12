@@ -17,9 +17,10 @@ export PATH=$PATH:$(npm get prefix -g)/bin
 #source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # AWS
-export AWS_PROFILE=qa
-export AWS_REGION=us-east-1
-export AWS_DEFAULT_REGION=us-east-1
+
+#export AWS_PROFILE=qa
+#export AWS_REGION=us-east-1
+#export AWS_DEFAULT_REGION=us-east-1
 
 # Clojure
 export LEIN_USE_BOOTCLASSPATH=no
@@ -41,14 +42,24 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH=$PATH:~/.ghcup/bin
 
 # Python
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-#export WORKON_HOME=~/.virtualenvs
-#export PROJECT_HOME=~/dev-projects
-#export PROJECT_HOME=~/dev-projects-asconsoft
-#source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=$(which python)
+export VIRTUALENVWRAPPER_VIRTUALENV=$(which virtualenv)
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/dev-projects
+#export PATH=~/.local/bin:$PATH
+# installed with pip via asdf
+source $(asdf which virtualenvwrapper.sh)
 #export PATH=$PATH:$HOME/.virtualenvs/default/lib/python3.8/site-packages
-export PATH=~/Library/Python/3.9/bin:$PATH
+#export PATH=~/Library/Python/3.9/bin:$PATH
+
+# postgres
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/postgresql@16/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@16/include"
+export PKG_CONFIG_PATH="/usr/local/opt/postgresql@16/lib/pkgconfig"
+
+# mysql
+export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"
 
 # zsh-autoenv
 AUTOENV_FILE_ENTER=.autoenv.zsh
@@ -57,7 +68,7 @@ AUTOENV_HANDLE_LEAVE=1
 AUTOENV_LOOK_UPWARDS=1
 
 # ZSH plugins management with zplug
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "Tarrasch/zsh-autoenv"
@@ -79,15 +90,6 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 
-# alias
-
 eval "$(starship init zsh)"
 
-# Add JBang to environment
-alias j!=jbang
-export PATH="$HOME/.jbang/bin:$PATH"
-
-# Ladders
-#export KUROSAWA_S3_CONFIG_URI=s3://ladders-config/local/
-#export KUROSAWA_API_URL=http://localhost:8080
-#export CLJ_CONFIG=/Users/gautamr/dev-projects-ladders/services
+# alias

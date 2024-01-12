@@ -91,13 +91,13 @@ brew install jenv
 # Dart and flutter
 brew install asdf
 
-brew install fd
 ```
 
 ### tools
 
 ```sh
 brew install ripgrep
+brew install fd
 brew install --cask emacs
 brew install --cask sublime-text
 brew install kubectx
@@ -105,9 +105,28 @@ brew install --cask visual-studio-code
 ```
 #### NeoVIM
 
-```
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```sh
+# commands
+TSInstall <lang>
+TSInstallInfo
+
+# key
+ctrl + n -> file tree
+m -> mark a file
+a -> new file
+c -> copy file
+p -> paste file
+
+# File Navigation
+SPC f f -> find file
+SPC f b -> find ONLY on open buffer
+
+# Window Navigation
+ctrl + j/k/h/l
+
+
+
+
 ```
 
 # ecosystems
@@ -166,10 +185,7 @@ https://github.com/venantius/ultra/issues/103
 export LEIN_USE_BOOTCLASSPATH=no
 ```
 
-### Haskell
-
-
-### Android
+## Android
 ```sh
 brew cask install android-sdk
 ```
@@ -180,6 +196,23 @@ brew install coreutils
 brew install gpg
 npm install -g eslint babel-eslint eslint-plugin-react
 npm install -g import-js
+
+```
+
+## Haskell
+First of all install `GHCup` with brew; this will manage all ecosystems for Haskell onwards
+```
+brew install ghcup
+
+````
+Install `haskell-language-server` using mason.
+
+## Python
+```sh
+asdf plugin-add python
+asdf install python 3.12.1
+asdf global python 3.12.1
+pip install virtualenvwrapper
 
 ```
 
